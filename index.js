@@ -30,9 +30,9 @@ mongoose
   .catch(err => console.log(err));
 
 //middlewares and route setup
-app.use('/', user);
-app.use('/a', [accmodule.accauthenticate], userauth);
-app.use('/p', [accmodule.accauthenticate, accmodule.logauthenticate], userauth);
+app.use('/', require('./routes/razorpay'));
+// app.use('/a', [accmodule.accauthenticate], userauth);
+// app.use('/p', [accmodule.accauthenticate, accmodule.logauthenticate], userauth);
 
 //server port
 app.listen(config.port, () => {
